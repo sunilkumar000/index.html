@@ -1,35 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>SK Luxury Store</title>
-
-<style>
-
 body{
-font-family: Arial;
 margin:0;
-background:#111;
-color:#d4af37;
+font-family:Arial;
+background:#ffffff;
+color:#111;
 }
 
 header{
 display:flex;
 justify-content:space-between;
 padding:20px 60px;
-background:#000;
-border-bottom:1px solid gold;
+background:#ffffff;
+border-bottom:1px solid #e5e5e5;
 }
 
 .logo{
 font-size:30px;
-color:gold;
+color:#111;
 font-weight:bold;
 }
 
 nav a{
 margin:0 15px;
+color:#111;
 text-decoration:none;
-color:white;
 }
 
 .hero{
@@ -38,155 +31,45 @@ padding:100px 20px;
 }
 
 .hero h1{
-font-size:50px;
-color:gold;
-}
-
-button{
-background:gold;
-border:none;
-padding:12px 25px;
-font-size:16px;
-cursor:pointer;
+font-size:55px;
+color:#111;
 }
 
 .products{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:30px;
-padding:40px;
+padding:50px;
 }
 
 .card{
-background:#111;
+background:#f8f8f8;
+border:1px solid #e5e5e5;
 padding:20px;
-border:1px solid gold;
 text-align:center;
 }
 
 .price{
-color:gold;
-font-size:18px;
+color:#000;
+font-size:20px;
 }
 
-.stock{
-font-size:14px;
-margin-top:5px;
+button{
+background:#000;
+color:#fff;
+border:none;
+padding:10px 20px;
+cursor:pointer;
+margin-top:10px;
+}
+
+.out{
+color:red;
+font-weight:bold;
 }
 
 footer{
 text-align:center;
 padding:30px;
-border-top:1px solid gold;
+border-top:1px solid #e5e5e5;
 }
-
-</style>
-
-</head>
-
-<body>
-
-<header>
-<div class="logo">SK</div>
-
-<nav>
-<a href="#">Home</a>
-<a href="#">Shop</a>
-<a href="#">Offers</a>
-<a href="#">Contact</a>
-</nav>
-</header>
-
-
-<section class="hero">
-
-<h1>SK Luxury Store</h1>
-
-<p>Premium Sneakers • Fashion • Perfumes</p>
-
-<button>Shop Now</button>
-
-</section>
-
-
-<section class="products" id="product-list">
-
-</section>
-
-
-<footer>
-
-<p>© 2026 SK Luxury Store</p>
-
-</footer>
-
-
-<script>
-
-let products = [
-{
-name:"Nike Air Force 1",
-price:2000,
-stock:true
-},
-{
-name:"Adidas Samba",
-price:2200,
-stock:true
-},
-{
-name:"Luxury Perfume",
-price:1500,
-stock:false
-}
-]
-
-
-function displayProducts(){
-
-let container = document.getElementById("product-list")
-
-container.innerHTML=""
-
-products.forEach((p,i)=>{
-
-container.innerHTML +=
-
-`
-<div class="card">
-
-<h3>${p.name}</h3>
-
-<p class="price">₹${p.price}</p>
-
-<p class="stock">
-${p.stock ? "In Stock" : "Out Of Stock"}
-</p>
-
-<button onclick="buyProduct(${i})">Buy</button>
-
-</div>
-`
-
-})
-
-}
-
-displayProducts()
-
-
-function buyProduct(i){
-
-if(products[i].stock==false){
-alert("Product Out Of Stock")
-return
-}
-
-alert("Order placed for "+products[i].name)
-
-}
-
-</script>
-
-</body>
-</html>
